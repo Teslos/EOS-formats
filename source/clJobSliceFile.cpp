@@ -76,6 +76,7 @@ bool clJobSliceFile::readFromFile(const char * filename)
 			part->sliFile.reset();
 
 			//- read .sli file
+			printf("Filename: %s\n", filename);
 			if (openPartFile(part, filename))
 			{
 				//- copy propertys

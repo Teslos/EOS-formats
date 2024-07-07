@@ -288,6 +288,7 @@ int clSliFile::getLayerIndexByPos(int PartIndex, float LayerPos)
 //---------------------------------------------------//
 bool clSliFile::readSliceData(clSliceData * sliceData, int PartIndex, int LayerIndex, int storeAsPartIndex)
 {
+	m_error.AddDebug("Read slice data");
 	if (PartIndex != 0) return false;
 
 	int n = 0;

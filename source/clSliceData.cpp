@@ -62,6 +62,16 @@ int clSliceData::getPartCount()
 	return m_partCount;
 }
 
+int clSliceData::getPointCount()
+{
+	return m_TransformedPointsLenght;
+}
+
+int clSliceData::getPointCount(int partIndex, int objectIndex)
+{
+	return m_parts[partIndex].objects[objectIndex].pointCount;
+}
+
 //---------------------------------------------------//
 int clSliceData::getObjectCount(int partIndex)
 {
@@ -153,7 +163,6 @@ float * clSliceData::getObjectPointsTransformed(int partIndex, int objectIndex, 
 
 	return m_TransformedPoints;
 }
-
 
 //---------------------------------------------------//
 bool clSliceData::drawRasteredObject(int *outFilledPicture, int * outLinePicture, int partIndex, tyMatrix matrix, int color, int width, int height)

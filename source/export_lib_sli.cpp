@@ -174,12 +174,12 @@ char * sf_getPartProperty(int sliI, int partIndex)
 //---------------------------------------------------//
 int sf_readSliceData(int sliI, int partIndex, int layerIndex)
 {
+	printf(" I am in read slice data");
 	if (sliI == NULL) return -1;
 	tyLibraryInterface * libInt = (tyLibraryInterface *) sliI;
 	if (libInt->magic != MAGIC_SLI) return -2;
 	if (libInt->sliFile == NULL) return -3;
 	if (libInt->sliceData == NULL) return -4;
-
 	return libInt->sliFile->readSliceData(libInt->sliceData, partIndex, layerIndex);
 }
 

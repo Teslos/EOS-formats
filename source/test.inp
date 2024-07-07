@@ -1,0 +1,6 @@
+power=200000 // power is expressed in mW
+recoatingtime=2.59871
+velocity=800.0
+slicer_input_filename=test.sli
+abaqus_output_filename=abaqus_new_param_input.inp
+

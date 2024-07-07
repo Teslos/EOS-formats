@@ -92,6 +92,11 @@ class clSliceData
 		/// <param name="partIndex">index of the Part</param>
 		int getObjectCount(int partIndex);
 
+		/// <summary>returns number of points </summary>
+		int getPointCount();
+
+		int getPointCount(int partIndex, int objectIndex);
+
 		/// <summary>returnes the coordinates of the part object [objectIndex]</summary>
 		/// <param name="partIndex">index of the Part</param>
 		/// <param name="objectIndex">index of the polyline or Hatch of the part</param>
@@ -103,6 +108,8 @@ class clSliceData
 		/// <param name="objectIndex">index of the polyline or Hatch of the part</param>
 		/// <param name="matrix">transfrom matrix to apply to the part</param>
 		float * getObjectPointsTransformed(int partIndex, int objectIndex, tyMatrix matrix);
+
+
 
 		/// <summary>rasters/renders a part layer to a INT Array</summary>
 		/// <param name="outFilledPicture">INT Array to render the part filled with [color] - can be NULL</param>

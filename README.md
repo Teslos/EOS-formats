@@ -1,6 +1,36 @@
 EOS-Formats
 ===========
 
+Abaqus format
+-------------
+Eos format can produce the inp file for Abaqus AMModeler framework. 
+To build the program to read in *.sli format ("Slice Layer Interface")
+in the `source` directory:   
+<code> build.bat </code>
+Inside the `build` directory the main.exe program tranlates the *.sli format to
+*.inp Abaqus file.
+The main.exe program takes input file that contains the parameters necessary for
+the AMModeler (for example `test.inp`):
+```
+power=200000 // power is expressed in mW
+recoatingtime=2.59871
+velocity=800.0
+slicer_input_filename=test.sli
+abaqus_output_filename=abaqus_new_param_input.inp
+```
+Parameters:
+- power - power to use for laser manufacturing.
+- reacoatingtime - time to reacoat the layer.
+- velocity - velocity of the laser during manufacturing.
+- slicer_input_filename - input file describing the laser path during the scanning. 
+- abaqus_output_filename - output file of the laser path for Abaqus simulation.
+
+To create the `abaqus_new_param_input.inp` execute the command line:
+```
+main.exe test.inp
+```
+Now copy the `abaqus_new_param_input.inp` to Event series like `EventSeriesLaser.inp` to Abaqus input file.
+
 job-format
 ----------
 * read .job files of the Process-controlling-Software (create with PSW Software) of 3D Printers from EOS GmbH(c) 
